@@ -1,4 +1,4 @@
-# home
+# Home
 
 [GitHub Repository](https://github.com/mucoco-tester/mucoco-tester.github.io)
 
