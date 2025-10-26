@@ -162,6 +162,25 @@
         }
       }
 
+      .home-link {
+        color: #4a5568;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: 600;
+        padding: 10px 20px;
+        border: 2px solid #4a5568;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .home-link:hover {
+        background: linear-gradient(135deg, #4a5568, #2d3748);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(74, 85, 104, 0.2);
+      }
+
       @media (max-width: 768px) {
         h1 {
           font-size: 1.8em;
@@ -179,6 +198,12 @@
   <body>
     <div class="container">
       <h1>🔬 MuCoCo Benchmark Results</h1>
+
+      <div style="text-align: left; margin-bottom: 20px">
+        <a href="https://mucoco-tester.github.io/home/" class="home-link">
+          ← Back to Home
+        </a>
+      </div>
 
       <div class="toggle-container">
         <div class="toggle-buttons">
@@ -212,580 +237,583 @@
       <!-- Tables Section -->
       <div id="tables" class="content-section">
         <h2>Effectiveness of MuCoCo Across All Models</h2>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th rowspan="2">Mutation Type</th>
-              <th colspan="2">Qwen2.5</th>
-              <th colspan="2">Gemma-3</th>
-              <th colspan="2">DeepSeek-V3.2</th>
-              <th colspan="2">LLaMA-3.1</th>
-              <th colspan="2">GPT-5</th>
-              <th colspan="2">GPT-4o</th>
-              <th colspan="2">Codestral</th>
-              <th colspan="2">All Models</th>
-            </tr>
-            <tr>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Logical</strong></td>
-              <td>7.60</td>
-              <td class="score">76.23</td>
-              <td>12.24</td>
-              <td class="score">66.13</td>
-              <td>15.72</td>
-              <td class="score">63.00</td>
-              <td>17.21</td>
-              <td class="score">49.88</td>
-              <td>1.52</td>
-              <td class="score">97.52</td>
-              <td>17.99</td>
-              <td class="score">64.25</td>
-              <td>12.67</td>
-              <td class="score">66.15</td>
-              <td>11.38 (3829/33646)</td>
-              <td class="score">69.01 (310553/450000)</td>
-            </tr>
-            <tr>
-              <td><strong>Syntactic</strong></td>
-              <td>4.19</td>
-              <td class="score">77.91</td>
-              <td>7.92</td>
-              <td class="score">68.78</td>
-              <td>12.95</td>
-              <td class="score">65.80</td>
-              <td>11.43</td>
-              <td class="score">55.70</td>
-              <td>1.10</td>
-              <td class="score">98.46</td>
-              <td>15.81</td>
-              <td class="score">65.75</td>
-              <td>9.09</td>
-              <td class="score">68.71</td>
-              <td>8.38 (14608/174133)</td>
-              <td class="score">71.58 (1166123/23909)</td>
-            </tr>
-            <tr>
-              <td><strong>Lexical</strong></td>
-              <td>13.19</td>
-              <td class="score">67.63</td>
-              <td>17.93</td>
-              <td class="score">60.66</td>
-              <td>12.92</td>
-              <td class="score">69.24</td>
-              <td>22.17</td>
-              <td class="score">48.41</td>
-              <td>2.78</td>
-              <td class="score">94.16</td>
-              <td>17.05</td>
-              <td class="score">68.90</td>
-              <td>10.69</td>
-              <td class="score">70.96</td>
-              <td>13.07 (7607/58213)</td>
-              <td class="score">68.49 (534425/794644)</td>
-            </tr>
-            <tr class="aggregated-row">
-              <td><strong>All (Avg.)</strong></td>
-              <td><strong>9.92</strong></td>
-              <td class="score"><strong>71.86</strong></td>
-              <td><strong>14.47</strong></td>
-              <td class="score"><strong>63.60</strong></td>
-              <td><strong>13.76</strong></td>
-              <td class="score"><strong>66.80</strong></td>
-              <td><strong>18.89</strong></td>
-              <td class="score"><strong>50.00</strong></td>
-              <td><strong>2.11</strong></td>
-              <td class="score"><strong>95.87</strong></td>
-              <td><strong>17.14</strong></td>
-              <td class="score"><strong>66.99</strong></td>
-              <td><strong>11.04</strong></td>
-              <td class="score"><strong>69.14</strong></td>
-              <td><strong>11.79 (12896/109272)</strong></td>
-              <td class="score"><strong>69.13 (1020992/1476773)</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2">Mutation Type</th>
+                <th colspan="2">Qwen2.5</th>
+                <th colspan="2">Gemma-3</th>
+                <th colspan="2">DeepSeek-V3.2</th>
+                <th colspan="2">LLaMA-3.1</th>
+                <th colspan="2">GPT-5</th>
+                <th colspan="2">GPT-4o</th>
+                <th colspan="2">Codestral</th>
+                <th colspan="2">All Models</th>
+              </tr>
+              <tr>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Logical</strong></td>
+                <td>7.60</td>
+                <td class="score">76.23</td>
+                <td>12.24</td>
+                <td class="score">66.13</td>
+                <td>15.72</td>
+                <td class="score">63.00</td>
+                <td>17.21</td>
+                <td class="score">49.88</td>
+                <td>1.52</td>
+                <td class="score">97.52</td>
+                <td>17.99</td>
+                <td class="score">64.25</td>
+                <td>12.67</td>
+                <td class="score">66.15</td>
+                <td>11.38 (3829/33646)</td>
+                <td class="score">69.01 (310553/450000)</td>
+              </tr>
+              <tr>
+                <td><strong>Syntactic</strong></td>
+                <td>4.19</td>
+                <td class="score">77.91</td>
+                <td>7.92</td>
+                <td class="score">68.78</td>
+                <td>12.95</td>
+                <td class="score">65.80</td>
+                <td>11.43</td>
+                <td class="score">55.70</td>
+                <td>1.10</td>
+                <td class="score">98.46</td>
+                <td>15.81</td>
+                <td class="score">65.75</td>
+                <td>9.09</td>
+                <td class="score">68.71</td>
+                <td>8.38 (14608/174133)</td>
+                <td class="score">71.58 (1166123/23909)</td>
+              </tr>
+              <tr>
+                <td><strong>Lexical</strong></td>
+                <td>13.19</td>
+                <td class="score">67.63</td>
+                <td>17.93</td>
+                <td class="score">60.66</td>
+                <td>12.92</td>
+                <td class="score">69.24</td>
+                <td>22.17</td>
+                <td class="score">48.41</td>
+                <td>2.78</td>
+                <td class="score">94.16</td>
+                <td>17.05</td>
+                <td class="score">68.90</td>
+                <td>10.69</td>
+                <td class="score">70.96</td>
+                <td>13.07 (7607/58213)</td>
+                <td class="score">68.49 (534425/794644)</td>
+              </tr>
+              <tr class="aggregated-row">
+                <td><strong>All (Avg.)</strong></td>
+                <td><strong>9.92</strong></td>
+                <td class="score"><strong>71.86</strong></td>
+                <td><strong>14.47</strong></td>
+                <td class="score"><strong>63.60</strong></td>
+                <td><strong>13.76</strong></td>
+                <td class="score"><strong>66.80</strong></td>
+                <td><strong>18.89</strong></td>
+                <td class="score"><strong>50.00</strong></td>
+                <td><strong>2.11</strong></td>
+                <td class="score"><strong>95.87</strong></td>
+                <td><strong>17.14</strong></td>
+                <td class="score"><strong>66.99</strong></td>
+                <td><strong>11.04</strong></td>
+                <td class="score"><strong>69.14</strong></td>
+                <td><strong>11.79 (12896/109272)</strong></td>
+                <td class="score"><strong>69.13 (1020992/1476773)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <h2>Effectiveness of MuCoCo across all tested tasks</h2>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th rowspan="2">Mutation Type</th>
-              <th colspan="2">MCQ</th>
-              <th colspan="2">Input Pred.</th>
-              <th colspan="2">Output Pred.</th>
-              <th colspan="2">Code Gen.</th>
-              <th colspan="2">All Tasks</th>
-            </tr>
-            <tr>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Logical</strong></td>
-              <td>45.56</td>
-              <td class="score">46.48</td>
-              <td>8.78</td>
-              <td class="score">75.90</td>
-              <td>10.77</td>
-              <td class="score">64.16</td>
-              <td>–</td>
-              <td class="score">–</td>
-              <td>11.38 (3829/33646)</td>
-              <td class="score">69.01 (310553/450000)</td>
-            </tr>
-            <tr>
-              <td><strong>Syntactic</strong></td>
-              <td>19.82</td>
-              <td class="score">67.80</td>
-              <td>7.02</td>
-              <td class="score">80.53</td>
-              <td>9.08</td>
-              <td class="score">62.89</td>
-              <td>–</td>
-              <td class="score">–</td>
-              <td>8.38 (1460/17413)</td>
-              <td class="score">71.58 (16612/23209)</td>
-            </tr>
-            <tr>
-              <td><strong>Lexical</strong></td>
-              <td>10.36</td>
-              <td class="score">78.36</td>
-              <td>7.88</td>
-              <td class="score">80.59</td>
-              <td>12.38</td>
-              <td class="score">61.84</td>
-              <td>26.22</td>
-              <td class="score">57.68</td>
-              <td>13.07 (7607/58213)</td>
-              <td class="score">68.49 (54425/79464)</td>
-            </tr>
-            <tr class="aggregated-row">
-              <td><strong>All (Avg.)</strong></td>
-              <td><strong>25.60</strong></td>
-              <td class="score"><strong>64.04</strong></td>
-              <td><strong>8.03</strong></td>
-              <td class="score"><strong>78.97</strong></td>
-              <td><strong>11.23</strong></td>
-              <td class="score"><strong>62.82</strong></td>
-              <td><strong>26.22</strong></td>
-              <td class="score"><strong>57.68</strong></td>
-              <td><strong>11.79 (12896/109272)</strong></td>
-              <td class="score"><strong>69.13 (102092/147673)</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <h2>Effectiveness of MuCoCo across all tested tasks</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2">Mutation Type</th>
+                <th colspan="2">MCQ</th>
+                <th colspan="2">Input Pred.</th>
+                <th colspan="2">Output Pred.</th>
+                <th colspan="2">Code Gen.</th>
+                <th colspan="2">All Tasks</th>
+              </tr>
+              <tr>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Logical</strong></td>
+                <td>45.56</td>
+                <td class="score">46.48</td>
+                <td>8.78</td>
+                <td class="score">75.90</td>
+                <td>10.77</td>
+                <td class="score">64.16</td>
+                <td>–</td>
+                <td class="score">–</td>
+                <td>11.38 (3829/33646)</td>
+                <td class="score">69.01 (310553/450000)</td>
+              </tr>
+              <tr>
+                <td><strong>Syntactic</strong></td>
+                <td>19.82</td>
+                <td class="score">67.80</td>
+                <td>7.02</td>
+                <td class="score">80.53</td>
+                <td>9.08</td>
+                <td class="score">62.89</td>
+                <td>–</td>
+                <td class="score">–</td>
+                <td>8.38 (1460/17413)</td>
+                <td class="score">71.58 (16612/23209)</td>
+              </tr>
+              <tr>
+                <td><strong>Lexical</strong></td>
+                <td>10.36</td>
+                <td class="score">78.36</td>
+                <td>7.88</td>
+                <td class="score">80.59</td>
+                <td>12.38</td>
+                <td class="score">61.84</td>
+                <td>26.22</td>
+                <td class="score">57.68</td>
+                <td>13.07 (7607/58213)</td>
+                <td class="score">68.49 (54425/79464)</td>
+              </tr>
+              <tr class="aggregated-row">
+                <td><strong>All (Avg.)</strong></td>
+                <td><strong>25.60</strong></td>
+                <td class="score"><strong>64.04</strong></td>
+                <td><strong>8.03</strong></td>
+                <td class="score"><strong>78.97</strong></td>
+                <td><strong>11.23</strong></td>
+                <td class="score"><strong>62.82</strong></td>
+                <td><strong>26.22</strong></td>
+                <td class="score"><strong>57.68</strong></td>
+                <td><strong>11.79 (12896/109272)</strong></td>
+                <td class="score"><strong>69.13 (102092/147673)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <h2>Effectiveness of MuCoCo across coding datasets</h2>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th rowspan="2">Mutation Type</th>
-              <th colspan="2">CodeMMLU</th>
-              <th colspan="2">HumanEval</th>
-              <th colspan="2">CruxEval</th>
-              <th colspan="2">BigCodeBench</th>
-              <th colspan="2">All Datasets</th>
-            </tr>
-            <tr>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Logical</strong></td>
-              <td>45.56</td>
-              <td class="score">46.48</td>
-              <td>8.41</td>
-              <td class="score">73.26</td>
-              <td>14.06</td>
-              <td class="score">60.57</td>
-              <td>–</td>
-              <td class="score">–</td>
-              <td>11.38 (3829/33646)</td>
-              <td class="score">69.01 (310553/450000)</td>
-            </tr>
-            <tr>
-              <td><strong>Syntactic</strong></td>
-              <td>19.82</td>
-              <td class="score">67.80</td>
-              <td>6.70</td>
-              <td class="score">74.94</td>
-              <td>10.00</td>
-              <td class="score">66.74</td>
-              <td>–</td>
-              <td class="score">–</td>
-              <td>8.38 (1460/17413)</td>
-              <td class="score">71.58 (16612/23209)</td>
-            </tr>
-            <tr>
-              <td><strong>Lexical</strong></td>
-              <td>10.36</td>
-              <td class="score">78.36</td>
-              <td>9.00</td>
-              <td class="score">74.55</td>
-              <td>11.82</td>
-              <td class="score">66.41</td>
-              <td>26.98</td>
-              <td class="score">56.97</td>
-              <td>13.07 (7607/58213)</td>
-              <td class="score">68.49 (54425/79464)</td>
-            </tr>
-            <tr class="aggregated-row">
-              <td><strong>All</strong></td>
-              <td><strong>25.60</strong></td>
-              <td class="score"><strong>64.04</strong></td>
-              <td><strong>8.35</strong></td>
-              <td class="score"><strong>74.16</strong></td>
-              <td><strong>11.97</strong></td>
-              <td class="score"><strong>65.11</strong></td>
-              <td><strong>26.98</strong></td>
-              <td class="score"><strong>56.97</strong></td>
-              <td><strong>11.79 (12896/109272)</strong></td>
-              <td class="score"><strong>69.13 (102092/147673)</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <h2>Effectiveness of MuCoCo across coding datasets</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2">Mutation Type</th>
+                <th colspan="2">CodeMMLU</th>
+                <th colspan="2">HumanEval</th>
+                <th colspan="2">CruxEval</th>
+                <th colspan="2">BigCodeBench</th>
+                <th colspan="2">All Datasets</th>
+              </tr>
+              <tr>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Logical</strong></td>
+                <td>45.56</td>
+                <td class="score">46.48</td>
+                <td>8.41</td>
+                <td class="score">73.26</td>
+                <td>14.06</td>
+                <td class="score">60.57</td>
+                <td>–</td>
+                <td class="score">–</td>
+                <td>11.38 (3829/33646)</td>
+                <td class="score">69.01 (310553/450000)</td>
+              </tr>
+              <tr>
+                <td><strong>Syntactic</strong></td>
+                <td>19.82</td>
+                <td class="score">67.80</td>
+                <td>6.70</td>
+                <td class="score">74.94</td>
+                <td>10.00</td>
+                <td class="score">66.74</td>
+                <td>–</td>
+                <td class="score">–</td>
+                <td>8.38 (1460/17413)</td>
+                <td class="score">71.58 (16612/23209)</td>
+              </tr>
+              <tr>
+                <td><strong>Lexical</strong></td>
+                <td>10.36</td>
+                <td class="score">78.36</td>
+                <td>9.00</td>
+                <td class="score">74.55</td>
+                <td>11.82</td>
+                <td class="score">66.41</td>
+                <td>26.98</td>
+                <td class="score">56.97</td>
+                <td>13.07 (7607/58213)</td>
+                <td class="score">68.49 (54425/79464)</td>
+              </tr>
+              <tr class="aggregated-row">
+                <td><strong>All</strong></td>
+                <td><strong>25.60</strong></td>
+                <td class="score"><strong>64.04</strong></td>
+                <td><strong>8.35</strong></td>
+                <td class="score"><strong>74.16</strong></td>
+                <td><strong>11.97</strong></td>
+                <td class="score"><strong>65.11</strong></td>
+                <td><strong>26.98</strong></td>
+                <td class="score"><strong>56.97</strong></td>
+                <td><strong>11.79 (12896/109272)</strong></td>
+                <td class="score"><strong>69.13 (102092/147673)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <h2>Effectiveness of MuCoCo versus TURBULENCE using the TURBULENCE dataset</h2>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th rowspan="2">Approach</th>
-              <th colspan="3">Code Generation</th>
-              <th colspan="3">Input Prediction</th>
-              <th colspan="3">Output Prediction</th>
-              <th colspan="3">All Tasks</th>
-            </tr>
-            <tr>
-              <th>#errs</th>
-              <th>#tests</th>
-              <th>ErrRate</th>
-              <th>#errs</th>
-              <th>#tests</th>
-              <th>ErrRate</th>
-              <th>#errs</th>
-              <th>#tests</th>
-              <th>ErrRate</th>
-              <th>#errs</th>
-              <th>#tests</th>
-              <th>ErrRate</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>TURBULENCE</strong></td>
-              <td>17604</td>
-              <td>40567</td>
-              <td class="score">43.39%</td>
-              <td>54752</td>
-              <td>134169</td>
-              <td class="score">40.81%</td>
-              <td>63651</td>
-              <td>225613</td>
-              <td class="score">28.21%</td>
-              <td>136007</td>
-              <td>400349</td>
-              <td class="score">33.97%</td>
-            </tr>
-            <tr>
-              <td><strong>MuCoCo</strong></td>
-              <td><strong>23933</strong></td>
-              <td><strong>73279</strong></td>
-              <td class="score"><strong>32.66%</strong></td>
-              <td><strong>366968</strong></td>
-              <td><strong>1036344</strong></td>
-              <td class="score"><strong>35.4%</strong></td>
-              <td><strong>405316</strong></td>
-              <td><strong>1490118</strong></td>
-              <td class="score"><strong>27.2%</strong></td>
-              <td><strong>796217</strong></td>
-              <td><strong>2599741</strong></td>
-              <td class="score"><strong>30.63%</strong></td>
-            </tr>
-            <tr class="aggregated-row">
-              <td><strong>% Impr.</strong></td>
-              <td><strong>35.95%</strong></td>
-              <td><strong>80.64%</strong></td>
-              <td class="score"><strong>-24.73%</strong></td>
-              <td><strong>570.24%</strong></td>
-              <td><strong>672.42%</strong></td>
-              <td class="score"><strong>-13.26%</strong></td>
-              <td><strong>536.78%</strong></td>
-              <td><strong>560.48%</strong></td>
-              <td class="score"><strong>-3.58%</strong></td>
-              <td><strong>485.42%</strong></td>
-              <td><strong>549.37%</strong></td>
-              <td class="score"><strong>-9.83%</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <h2>
+          Effectiveness of MuCoCo versus TURBULENCE using the TURBULENCE dataset
+        </h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2">Approach</th>
+                <th colspan="3">Code Generation</th>
+                <th colspan="3">Input Prediction</th>
+                <th colspan="3">Output Prediction</th>
+                <th colspan="3">All Tasks</th>
+              </tr>
+              <tr>
+                <th>#errs</th>
+                <th>#tests</th>
+                <th>ErrRate</th>
+                <th>#errs</th>
+                <th>#tests</th>
+                <th>ErrRate</th>
+                <th>#errs</th>
+                <th>#tests</th>
+                <th>ErrRate</th>
+                <th>#errs</th>
+                <th>#tests</th>
+                <th>ErrRate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TURBULENCE</strong></td>
+                <td>17604</td>
+                <td>40567</td>
+                <td class="score">43.39%</td>
+                <td>54752</td>
+                <td>134169</td>
+                <td class="score">40.81%</td>
+                <td>63651</td>
+                <td>225613</td>
+                <td class="score">28.21%</td>
+                <td>136007</td>
+                <td>400349</td>
+                <td class="score">33.97%</td>
+              </tr>
+              <tr>
+                <td><strong>MuCoCo</strong></td>
+                <td><strong>23933</strong></td>
+                <td><strong>73279</strong></td>
+                <td class="score"><strong>32.66%</strong></td>
+                <td><strong>366968</strong></td>
+                <td><strong>1036344</strong></td>
+                <td class="score"><strong>35.4%</strong></td>
+                <td><strong>405316</strong></td>
+                <td><strong>1490118</strong></td>
+                <td class="score"><strong>27.2%</strong></td>
+                <td><strong>796217</strong></td>
+                <td><strong>2599741</strong></td>
+                <td class="score"><strong>30.63%</strong></td>
+              </tr>
+              <tr class="aggregated-row">
+                <td><strong>% Impr.</strong></td>
+                <td><strong>35.95%</strong></td>
+                <td><strong>80.64%</strong></td>
+                <td class="score"><strong>-24.73%</strong></td>
+                <td><strong>570.24%</strong></td>
+                <td><strong>672.42%</strong></td>
+                <td class="score"><strong>-13.26%</strong></td>
+                <td><strong>536.78%</strong></td>
+                <td><strong>560.48%</strong></td>
+                <td class="score"><strong>-3.58%</strong></td>
+                <td><strong>485.42%</strong></td>
+                <td><strong>549.37%</strong></td>
+                <td class="score"><strong>-9.83%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-      <h2>Impact of varying mode confidence on Inconsistency (%) and Accuracy (%)</h2>
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th rowspan="2">Confidence</th>
-              <th colspan="6">Gemma</th>
-              <th colspan="6">Qwen</th>
-              <th colspan="6">Llama</th>
-              <th colspan="2">Aggregated</th>
-            </tr>
-            <tr>
-              <th>HumanEval Inc.</th>
-              <th>HumanEval Acc.</th>
-              <th>CruxEval Inc.</th>
-              <th>CruxEval Acc.</th>
-              <th>CodeMMLU Inc.</th>
-              <th>CodeMMLU Acc.</th>
-              <th>HumanEval Inc.</th>
-              <th>HumanEval Acc.</th>
-              <th>CruxEval Inc.</th>
-              <th>CruxEval Acc.</th>
-              <th>CodeMMLU Inc.</th>
-              <th>CodeMMLU Acc.</th>
-              <th>HumanEval Inc.</th>
-              <th>HumanEval Acc.</th>
-              <th>CruxEval Inc.</th>
-              <th>CruxEval Acc.</th>
-              <th>CodeMMLU Inc.</th>
-              <th>CodeMMLU Acc.</th>
-              <th>Inc.</th>
-              <th>Acc.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>0.50</strong></td>
-              <td>18.02</td>
-              <td class="score">82.28</td>
-              <td>4.86</td>
-              <td class="score">77.09</td>
-              <td>51.21</td>
-              <td class="score">52.52</td>
-              <td>3.39</td>
-              <td class="score">88.52</td>
-              <td>7.30</td>
-              <td class="score">84.21</td>
-              <td>29.93</td>
-              <td class="score">63.10</td>
-              <td>18.02</td>
-              <td class="score">47.54</td>
-              <td>4.86</td>
-              <td class="score">93.94</td>
-              <td>51.21</td>
-              <td class="score">37.04</td>
-              <td><strong>9.71</strong></td>
-              <td class="score"><strong>75.79</strong></td>
-            </tr>
-            <tr>
-              <td><strong>0.60</strong></td>
-              <td>18.02</td>
-              <td class="score">82.28</td>
-              <td>4.86</td>
-              <td class="score">77.09</td>
-              <td>50.00</td>
-              <td class="score">52.52</td>
-              <td>3.39</td>
-              <td class="score">88.52</td>
-              <td>7.30</td>
-              <td class="score">84.21</td>
-              <td>29.93</td>
-              <td class="score">63.10</td>
-              <td>18.02</td>
-              <td class="score">47.54</td>
-              <td>4.86</td>
-              <td class="score">93.94</td>
-              <td>50.00</td>
-              <td class="score">37.74</td>
-              <td><strong>9.65</strong></td>
-              <td class="score"><strong>75.86</strong></td>
-            </tr>
-            <tr>
-              <td><strong>0.70</strong></td>
-              <td>18.02</td>
-              <td class="score">82.28</td>
-              <td>4.86</td>
-              <td class="score">77.09</td>
-              <td>36.15</td>
-              <td class="score">52.52</td>
-              <td>3.39</td>
-              <td class="score">88.52</td>
-              <td>7.30</td>
-              <td class="score">84.21</td>
-              <td>29.38</td>
-              <td class="score">64.03</td>
-              <td>18.02</td>
-              <td class="score">47.54</td>
-              <td>4.86</td>
-              <td class="score">93.94</td>
-              <td>36.15</td>
-              <td class="score">42.83</td>
-              <td><strong>9.15</strong></td>
-              <td class="score"><strong>76.33</strong></td>
-            </tr>
-            <tr>
-              <td><strong>0.80</strong></td>
-              <td>0.25</td>
-              <td class="score">84.08</td>
-              <td>0.24</td>
-              <td class="score">78.45</td>
-              <td>8.54</td>
-              <td class="score">53.05</td>
-              <td>0.07</td>
-              <td class="score">95.88</td>
-              <td>0.68</td>
-              <td class="score">92.65</td>
-              <td>24.38</td>
-              <td class="score">67.95</td>
-              <td>0.25</td>
-              <td class="score">48.13</td>
-              <td>0.24</td>
-              <td class="score">98.43</td>
-              <td>8.54</td>
-              <td class="score">55.50</td>
-              <td><strong>3.91</strong></td>
-              <td class="score"><strong>82.79</strong></td>
-            </tr>
-            <tr>
-              <td><strong>0.90</strong></td>
-              <td>0.58</td>
-              <td class="score">85.03</td>
-              <td>0.00</td>
-              <td class="score">79.43</td>
-              <td>0.00</td>
-              <td class="score">54.50</td>
-              <td>0.00</td>
-              <td class="score">98.42</td>
-              <td>0.15</td>
-              <td class="score">97.47</td>
-              <td>18.99</td>
-              <td class="score">74.34</td>
-              <td>0.58</td>
-              <td class="score">55.47</td>
-              <td>0.00</td>
-              <td class="score">99.70</td>
-              <td>0.00</td>
-              <td class="score">82.43</td>
-              <td><strong>3.59</strong></td>
-              <td class="score"><strong>86.22</strong></td>
-            </tr>
-            <tr>
-              <td><strong>0.95</strong></td>
-              <td>0.00</td>
-              <td class="score">86.31</td>
-              <td>0.00</td>
-              <td class="score">80.92</td>
-              <td>0.00</td>
-              <td class="score">55.33</td>
-              <td>0.00</td>
-              <td class="score">99.38</td>
-              <td>0.28</td>
-              <td class="score">99.25</td>
-              <td>14.91</td>
-              <td class="score">79.75</td>
-              <td>0.00</td>
-              <td class="score">66.52</td>
-              <td>0.00</td>
-              <td class="score">100.00</td>
-              <td>0.00</td>
-              <td class="score">88.24</td>
-              <td><strong>3.35</strong></td>
-              <td class="score"><strong>86.74</strong></td>
-            </tr>
-            <tr>
-              <td><strong>0.99</strong></td>
-              <td>0.00</td>
-              <td class="score">89.68</td>
-              <td>0.00</td>
-              <td class="score">85.74</td>
-              <td>0.00</td>
-              <td class="score">56.54</td>
-              <td>0.00</td>
-              <td class="score">100.00</td>
-              <td>0.00</td>
-              <td class="score">100.00</td>
-              <td>4.11</td>
-              <td class="score">88.75</td>
-              <td>0.00</td>
-              <td class="score">100.00</td>
-              <td>0.00</td>
-              <td class="score">100.00</td>
-              <td>0.00</td>
-              <td class="score">100.00</td>
-              <td><strong>2.06</strong></td>
-              <td class="score"><strong>88.32</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+        <h2>
+          Impact of varying mode confidence on Inconsistency (%) and Accuracy
+          (%)
+        </h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2">Confidence</th>
+                <th colspan="6">Gemma</th>
+                <th colspan="6">Qwen</th>
+                <th colspan="6">Llama</th>
+                <th colspan="2">Aggregated</th>
+              </tr>
+              <tr>
+                <th>HumanEval Inc.</th>
+                <th>HumanEval Acc.</th>
+                <th>CruxEval Inc.</th>
+                <th>CruxEval Acc.</th>
+                <th>CodeMMLU Inc.</th>
+                <th>CodeMMLU Acc.</th>
+                <th>HumanEval Inc.</th>
+                <th>HumanEval Acc.</th>
+                <th>CruxEval Inc.</th>
+                <th>CruxEval Acc.</th>
+                <th>CodeMMLU Inc.</th>
+                <th>CodeMMLU Acc.</th>
+                <th>HumanEval Inc.</th>
+                <th>HumanEval Acc.</th>
+                <th>CruxEval Inc.</th>
+                <th>CruxEval Acc.</th>
+                <th>CodeMMLU Inc.</th>
+                <th>CodeMMLU Acc.</th>
+                <th>Inc.</th>
+                <th>Acc.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>0.50</strong></td>
+                <td>18.02</td>
+                <td class="score">82.28</td>
+                <td>4.86</td>
+                <td class="score">77.09</td>
+                <td>51.21</td>
+                <td class="score">52.52</td>
+                <td>3.39</td>
+                <td class="score">88.52</td>
+                <td>7.30</td>
+                <td class="score">84.21</td>
+                <td>29.93</td>
+                <td class="score">63.10</td>
+                <td>18.02</td>
+                <td class="score">47.54</td>
+                <td>4.86</td>
+                <td class="score">93.94</td>
+                <td>51.21</td>
+                <td class="score">37.04</td>
+                <td><strong>9.71</strong></td>
+                <td class="score"><strong>75.79</strong></td>
+              </tr>
+              <tr>
+                <td><strong>0.60</strong></td>
+                <td>18.02</td>
+                <td class="score">82.28</td>
+                <td>4.86</td>
+                <td class="score">77.09</td>
+                <td>50.00</td>
+                <td class="score">52.52</td>
+                <td>3.39</td>
+                <td class="score">88.52</td>
+                <td>7.30</td>
+                <td class="score">84.21</td>
+                <td>29.93</td>
+                <td class="score">63.10</td>
+                <td>18.02</td>
+                <td class="score">47.54</td>
+                <td>4.86</td>
+                <td class="score">93.94</td>
+                <td>50.00</td>
+                <td class="score">37.74</td>
+                <td><strong>9.65</strong></td>
+                <td class="score"><strong>75.86</strong></td>
+              </tr>
+              <tr>
+                <td><strong>0.70</strong></td>
+                <td>18.02</td>
+                <td class="score">82.28</td>
+                <td>4.86</td>
+                <td class="score">77.09</td>
+                <td>36.15</td>
+                <td class="score">52.52</td>
+                <td>3.39</td>
+                <td class="score">88.52</td>
+                <td>7.30</td>
+                <td class="score">84.21</td>
+                <td>29.38</td>
+                <td class="score">64.03</td>
+                <td>18.02</td>
+                <td class="score">47.54</td>
+                <td>4.86</td>
+                <td class="score">93.94</td>
+                <td>36.15</td>
+                <td class="score">42.83</td>
+                <td><strong>9.15</strong></td>
+                <td class="score"><strong>76.33</strong></td>
+              </tr>
+              <tr>
+                <td><strong>0.80</strong></td>
+                <td>0.25</td>
+                <td class="score">84.08</td>
+                <td>0.24</td>
+                <td class="score">78.45</td>
+                <td>8.54</td>
+                <td class="score">53.05</td>
+                <td>0.07</td>
+                <td class="score">95.88</td>
+                <td>0.68</td>
+                <td class="score">92.65</td>
+                <td>24.38</td>
+                <td class="score">67.95</td>
+                <td>0.25</td>
+                <td class="score">48.13</td>
+                <td>0.24</td>
+                <td class="score">98.43</td>
+                <td>8.54</td>
+                <td class="score">55.50</td>
+                <td><strong>3.91</strong></td>
+                <td class="score"><strong>82.79</strong></td>
+              </tr>
+              <tr>
+                <td><strong>0.90</strong></td>
+                <td>0.58</td>
+                <td class="score">85.03</td>
+                <td>0.00</td>
+                <td class="score">79.43</td>
+                <td>0.00</td>
+                <td class="score">54.50</td>
+                <td>0.00</td>
+                <td class="score">98.42</td>
+                <td>0.15</td>
+                <td class="score">97.47</td>
+                <td>18.99</td>
+                <td class="score">74.34</td>
+                <td>0.58</td>
+                <td class="score">55.47</td>
+                <td>0.00</td>
+                <td class="score">99.70</td>
+                <td>0.00</td>
+                <td class="score">82.43</td>
+                <td><strong>3.59</strong></td>
+                <td class="score"><strong>86.22</strong></td>
+              </tr>
+              <tr>
+                <td><strong>0.95</strong></td>
+                <td>0.00</td>
+                <td class="score">86.31</td>
+                <td>0.00</td>
+                <td class="score">80.92</td>
+                <td>0.00</td>
+                <td class="score">55.33</td>
+                <td>0.00</td>
+                <td class="score">99.38</td>
+                <td>0.28</td>
+                <td class="score">99.25</td>
+                <td>14.91</td>
+                <td class="score">79.75</td>
+                <td>0.00</td>
+                <td class="score">66.52</td>
+                <td>0.00</td>
+                <td class="score">100.00</td>
+                <td>0.00</td>
+                <td class="score">88.24</td>
+                <td><strong>3.35</strong></td>
+                <td class="score"><strong>86.74</strong></td>
+              </tr>
+              <tr>
+                <td><strong>0.99</strong></td>
+                <td>0.00</td>
+                <td class="score">89.68</td>
+                <td>0.00</td>
+                <td class="score">85.74</td>
+                <td>0.00</td>
+                <td class="score">56.54</td>
+                <td>0.00</td>
+                <td class="score">100.00</td>
+                <td>0.00</td>
+                <td class="score">100.00</td>
+                <td>4.11</td>
+                <td class="score">88.75</td>
+                <td>0.00</td>
+                <td class="score">100.00</td>
+                <td>0.00</td>
+                <td class="score">100.00</td>
+                <td>0.00</td>
+                <td class="score">100.00</td>
+                <td><strong>2.06</strong></td>
+                <td class="score"><strong>88.32</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
     <script>
       // Toggle function
       function showSection(section) {
+        // Hide all sections
+        const sections = document.querySelectorAll(".content-section");
+        sections.forEach((s) => s.classList.remove("active"));
 
-        const sections = document.querySelectorAll('.content-section');
-        sections.forEach(s => s.classList.remove('active'));
+        const buttons = document.querySelectorAll(".toggle-btn");
+        buttons.forEach((b) => b.classList.remove("active"));
 
-   
-        const buttons = document.querySelectorAll('.toggle-btn');
-        buttons.forEach(b => b.classList.remove('active'));
+        document.getElementById(section).classList.add("active");
 
-
-        document.getElementById(section).classList.add('active');
-
-      
-        event.target.classList.add('active');
+        event.target.classList.add("active");
       }
-      
+
+      // Chart.js configuration
       const chartOptions = {
         responsive: true,
         maintainAspectRatio: false,
@@ -794,103 +822,118 @@
             beginAtZero: true,
             max: 100,
             ticks: {
-              callback: function(value) {
-                return value + '%';
-              }
-            }
-          }
+              callback: function (value) {
+                return value + "%";
+              },
+            },
+          },
         },
         plugins: {
           legend: {
-            position: 'top',
-            onClick: null 
+            position: "top",
+            onClick: null, // Disable legend click functionality
           },
           tooltip: {
             callbacks: {
-              label: function(context) {
-                return context.dataset.label + ': ' + context.parsed.y.toFixed(1) + '%';
-              }
-            }
-          }
-        }
+              label: function (context) {
+                return (
+                  context.dataset.label +
+                  ": " +
+                  context.parsed.y.toFixed(1) +
+                  "%"
+                );
+              },
+            },
+          },
+        },
       };
 
       // Chart 1: Model Performance (Table VI)
-      const modelCtx = document.getElementById('modelChart').getContext('2d');
+      const modelCtx = document.getElementById("modelChart").getContext("2d");
       new Chart(modelCtx, {
-        type: 'bar',
+        type: "bar",
         data: {
-          labels: ['Qwen2.5', 'Gemma-3', 'DeepSeek-V3.2', 'LLaMA-3.1', 'GPT-5', 'GPT-4o', 'Codestral'],
+          labels: [
+            "Qwen2.5",
+            "Gemma-3",
+            "DeepSeek-V3.2",
+            "LLaMA-3.1",
+            "GPT-5",
+            "GPT-4o",
+            "Codestral",
+          ],
           datasets: [
             {
-              label: 'Inconsistency Rate',
+              label: "Inconsistency Rate",
               data: [9.92, 14.47, 13.76, 18.89, 2.11, 17.14, 11.04],
-              backgroundColor: 'rgba(52, 73, 94, 0.8)',
-              borderColor: 'rgba(52, 73, 94, 1)',
-              borderWidth: 1
+              backgroundColor: "rgba(52, 73, 94, 0.8)",
+              borderColor: "rgba(52, 73, 94, 1)",
+              borderWidth: 1,
             },
             {
-              label: 'Accuracy',
-              data: [71.86, 63.60, 66.80, 50.00, 95.87, 66.99, 69.14],
-              backgroundColor: 'rgba(70, 130, 180, 0.8)',
-              borderColor: 'rgba(70, 130, 180, 1)',
-              borderWidth: 1
-            }
-          ]
+              label: "Accuracy",
+              data: [71.86, 63.6, 66.8, 50.0, 95.87, 66.99, 69.14],
+              backgroundColor: "rgba(70, 130, 180, 0.8)",
+              borderColor: "rgba(70, 130, 180, 1)",
+              borderWidth: 1,
+            },
+          ],
         },
-        options: chartOptions
+        options: chartOptions,
       });
 
       // Chart 2: Task Performance (Table VII)
-      const taskCtx = document.getElementById('taskChart').getContext('2d');
+      const taskCtx = document.getElementById("taskChart").getContext("2d");
       new Chart(taskCtx, {
-        type: 'bar',
+        type: "bar",
         data: {
-          labels: ['MCQ', 'Input Pred.', 'Output Pred.', 'Code Gen.'],
+          labels: ["MCQ", "Input Pred.", "Output Pred.", "Code Gen."],
           datasets: [
             {
-              label: 'Inconsistency Rate',
-              data: [25.60, 8.03, 11.23, 26.22],
-              backgroundColor: 'rgba(52, 73, 94, 0.8)',
-              borderColor: 'rgba(52, 73, 94, 1)',
-              borderWidth: 1
+              label: "Inconsistency Rate",
+              data: [25.6, 8.03, 11.23, 26.22],
+              backgroundColor: "rgba(52, 73, 94, 0.8)",
+              borderColor: "rgba(52, 73, 94, 1)",
+              borderWidth: 1,
             },
             {
-              label: 'Accuracy',
+              label: "Accuracy",
               data: [64.04, 78.97, 62.82, 57.68],
-              backgroundColor: 'rgba(70, 130, 180, 0.8)',
-              borderColor: 'rgba(70, 130, 180, 1)',
-              borderWidth: 1
-            }
-          ]
+              backgroundColor: "rgba(70, 130, 180, 0.8)",
+              borderColor: "rgba(70, 130, 180, 1)",
+              borderWidth: 1,
+            },
+          ],
         },
-        options: chartOptions
+        options: chartOptions,
       });
 
       // Chart 3: Dataset Performance (Table VIII)
-      const datasetCtx = document.getElementById('datasetChart').getContext('2d');
+      const datasetCtx = document
+        .getElementById("datasetChart")
+        .getContext("2d");
       new Chart(datasetCtx, {
-        type: 'bar',
+        type: "bar",
         data: {
-          labels: ['CodeMMLU', 'HumanEval', 'CruxEval', 'BigCodeBench'],
+          labels: ["CodeMMLU", "HumanEval", "CruxEval", "BigCodeBench"],
           datasets: [
             {
-              label: 'Inconsistency Rate',
-              data: [25.60, 8.35, 11.97, 26.98],
-              backgroundColor: 'rgba(52, 73, 94, 0.8)',
-              borderColor: 'rgba(52, 73, 94, 1)',
-              borderWidth: 1
+              label: "Inconsistency Rate",
+              data: [25.6, 8.35, 11.97, 26.98],
+              backgroundColor: "rgba(52, 73, 94, 0.8)",
+              borderColor: "rgba(52, 73, 94, 1)",
+              borderWidth: 1,
             },
             {
-              label: 'Accuracy',
+              label: "Accuracy",
               data: [64.04, 74.16, 65.11, 56.97],
-              backgroundColor: 'rgba(70, 130, 180, 0.8)',
-              borderColor: 'rgba(70, 130, 180, 1)',
-              borderWidth: 1
-            }
-          ]
+              backgroundColor: "rgba(70, 130, 180, 0.8)",
+              borderColor: "rgba(70, 130, 180, 1)",
+              borderWidth: 1,
+            },
+          ],
         },
-        options: chartOptions
+        options: chartOptions,
       });
     </script>
   </body>
