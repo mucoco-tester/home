@@ -1,6 +1,7 @@
 # Home
 
 [GitHub Repository](https://github.com/mucoco-tester/mucoco-tester.github.io)
+#
 [Leaderboard](https://mucoco-tester.github.io/home/leaderboard)
 
 # MuCoCo: Code Consistency Testing Framework
