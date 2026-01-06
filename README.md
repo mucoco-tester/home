@@ -8,7 +8,7 @@ A research framework for evaluating the consistency and reliability of Large Lan
 
 ## Overview
 
-Large Language Models (LLMs) often portray
+Abstract—Large Language Models (LLMs) often portray
 inconsistent behaviors which result in severe consequences for
 coding tasks. Developers typically employ benchmarks to assess
 Code LLMs, but most benchmarks are hand-crafted, static
@@ -54,6 +54,15 @@ while preserving the semantics of the original program. The framework supports m
   - **for2while**: Changing for loops to while loops in original programs
   - **for2enumerate**: Standardising for loop iterators to enumerate iterators
 - **Logical Mutations**:
+
+  - **DeMorgan Transformation**: Applying [DeMorgan](https://en.wikipedia.org/wiki/De_Morgan%27s_laws) transformation onto boolean statements
+  - **Boolean Literal**: Converting boolean literal representations. E.g.: True -> not False
+  - **Comutative Reorder**: Applies semantic preserving commutative operations
+  - **Constant Unfolding**: Randomly unfolds constant expressions into equivalent multiplication or addition statements
+  - **Constant Unfolding Addition**: Unfolds constant expressions into addition statements
+  - **Constant Unfolding Multiplication**: Unfolds constant expressions into multiplication statements
+
+  _Note: The mutations will work for **most** questions, but not **all**. For example, `for2while` will fail to mutate some of the questions in the dataset. This will usually come up as a `MutationFailedError` or equivalent. Should you encounter an error like this, do ignore that question._
 
   - **DeMorgan Transformation**: Applying [DeMorgan](https://en.wikipedia.org/wiki/De_Morgan%27s_laws) transformation onto boolean statements
   - **Boolean Literal**: Converting boolean literal representations. E.g.: True -> not False
@@ -244,4 +253,4 @@ Wait for the packages to finish installing. You may need to do some troubleshoot
 
 Scripts for identifying code inconsistency scores are found under `MuCoCo_results/notebooks` from the project root directoy. The notebooks are named according to the RQ the results are reported in. Navigate to that project sub directory for more information.
 
-You will need to download the MuCoCo experiment results from [Figshare](https://figshare.com/articles/journal_contribution/_b_MuCoCo_Code_Consistency_Testing_Framework_Replication_Package_b_/30402541) and store it in `MuCoCo_results` folder from the project root directory. The name of the folder storing the results should be named `MuCoCo_experiment_results`. These results are necessary for running the results aggregation scripts.
+You will need to download the MuCoCo experiment results from XXXX and store it in `MuCoCo_results` folder from the project root directory. The name of the folder storing the results should be named `MuCoCo_experiment_results`. These results are necessary for running the results aggregation scripts.
